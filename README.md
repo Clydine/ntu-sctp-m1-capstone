@@ -37,3 +37,6 @@ uv is a Python environment manager. To set up the environment, run the following
 4. matching of job title posted to job titles from SkillsFuture list of jobs and skills
     * not a fool proof 100% match, for e.g. "Driver" is matched to "Engine Driver" which is wrong, the correct match should be "Transport Operator", the matching process uses sentence transformer to get closest possible match however cultural semantics are lost in this 'translation'.
     * first try was abandoned, where an LLM is used to perform one-shot inference, the data is minimally cleaned and then combined with company name to provide even more context in the hopes of the llm being able to generate a better list of 'top skills', however, the generated list of skills follow no taxonomy so there is no standard and no consistetncy for proper analysis. using a governement approved taxonomy is better sense.
+
+## Links
+* [Skills Framework Dataset](https://jobsandskills.skillsfuture.gov.sg/frameworks/skills-frameworks)
