@@ -13,6 +13,22 @@
 * ```app.py```, main source code for streamlit application hosting
     * run this in streamlit
 
+## Data: data/cleaned-sgjobdata-exploded.parquet
+this is a list dataframe of job postings.
+ 0   job_id                  string     : unique identifier
+ 1   title                   string     : job title (dirty and messy)
+ 2   company                 string     : company name
+ 3   min_exp                 Int64      : minimum experience required for this job
+ 4   positionlevels          string     : position level of the job
+ 5   num_applications        Int64      : number of applications for this job
+ 6   num_views               Int64      : number of views for this job
+ 7   num_vacancies           Int64      : number of vacancies for this 1 job posting
+ 8   average_salary          Float64    : salary expected for this job
+ 9   average_salary_cleaned  Float64    : salary expected for this job, cleaned using windsorisation
+ 10  category                object     : sector category, in JSON format containing id, and category (name)
+ 11  jobtitle_cleaned        string     : cleaned job title 
+ 12  skill                   string     : skills needed for this particular job_id
+
 ## How to set up environment
 uv is a Python environment manager. To set up the environment, run the following commands after you have installed uv:
 

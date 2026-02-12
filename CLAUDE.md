@@ -12,7 +12,7 @@ NTU SCTP Capstone project analyzing ~1M Singapore job postings. The pipeline cle
 # Environment setup (requires uv package manager)
 uv venv .venv --python 3.12
 source .venv/bin/activate
-uv sync
+uv sync   # installs from uv.lock; includes heavy deps: torch, sentence-transformers, thefuzz
 
 # Run the Streamlit app
 streamlit run app.py
@@ -58,4 +58,4 @@ Cleaned dataset (1,044,597 rows): job_id, title, company, min_exp, positionlevel
 
 - Salary field has user-input quality problems (skipped entries, annual vs monthly confusion)
 - Semantic title matching loses cultural context (e.g., "Driver" → "Engine Driver" instead of "Transport Operator")
-- Earlier LLM-based skill generation was abandoned in favor of the government taxonomy
+- Earlier LLM-based skill generation was abandoned in favor of the government taxonomy (legacy files: `data/sgjobdata_titleskills*.parquet`)
