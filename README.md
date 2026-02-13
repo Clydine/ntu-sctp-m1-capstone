@@ -1,4 +1,14 @@
 # Capstone Project
+
+This README compiles information about this project and my learnings w.r.t. the process of getting here.
+
+## About using AI coding tools
+1. running claude code in CLI is pretty handy
+2. initialising claude project with ```claude /init``` is useful after you're already had some work done and set up some foundation. this creates a claude.md file that helps guide claude on behaviour.
+3. running the plan mode without properly writing out instructions sucks up tokens really really quickly and it gets expensive. plan mode at this stage uses opus 4.6 which is the most expensive - perhaps i should check if plan mode can use other models?
+4. run ```/compact``` frequently can help to maintain some context without over consuming tokens!
+5. always initialise git *AND* commit regularly before and after each claude action so that you can track changes and roll back if necessary!
+
 ## Files
 
 * ```data/SGJobData.csv.xz```, this file is the CSV file data source for the project, except compressed so that GitHub can accept it.
@@ -9,7 +19,6 @@
 * ```notebooks/*.ipynb```, jupyter notebook for testing out graphs and commands etc.
     * ```-eda.ipynb```, file that generated the cleaned parquet dfs
     * ```-ed-ml.ipynb```, can ignore, first trial for generating skillslist
-    * ```visualplayground.ipynb```, code for the visual to test out before putting in app.py
     * ```analysis.ipynb```, comprehensive skills analysis dashboard with visualizations
 * ```app.py```, main source code for streamlit application hosting
     * run this in streamlit
@@ -111,6 +120,13 @@ uv is a Python environment manager. To set up the environment, run the following
 4. matching of job title posted to job titles from SkillsFuture list of jobs and skills
     * not a fool proof 100% match, for e.g. "Driver" is matched to "Engine Driver" which is wrong, the correct match should be "Transport Operator", the matching process uses sentence transformer to get closest possible match however cultural semantics are lost in this 'translation'.
     * first try was abandoned, where an LLM is used to perform one-shot inference, the data is minimally cleaned and then combined with company name to provide even more context in the hopes of the llm being able to generate a better list of 'top skills', however, the generated list of skills follow no taxonomy so there is no standard and no consistetncy for proper analysis. using a governement approved taxonomy is better sense.
+
+## Collaboration via Git
+* version control across many people is difficult, haven't learn how to collab properly
+
+## Visualisation
+* issues with getting the correct formulas to get the visuals that we want to see
+* need to be more acquainted with the raw data, and do more test visualisations to see if things are good
 
 ## Links
 * [Skills Framework Dataset](https://jobsandskills.skillsfuture.gov.sg/frameworks/skills-frameworks)
